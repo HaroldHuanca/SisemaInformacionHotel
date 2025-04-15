@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Paradise - Gestión de Usuarios</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="usuarios.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-users"></i> Gestión de Usuarios</h1>
+            <nav>
+                <a href="habitaciones.html"><i class="fas fa-bed"></i> Habitaciones</a>
+                <a href="#"><i class="fas fa-sign-out-alt"></i> Salir</a>
+            </nav>
+        </header>
+
+        <div class="content">
+            <div class="form-container">
+                <h2><i class="fas fa-user-plus"></i> Agregar/Editar Usuario</h2>
+                <form id="usuario-form">
+                    <input type="hidden" id="usuario-id">
+                    <div class="form-group">
+                        <label for="nombre"><i class="fas fa-user"></i> Nombre:</label>
+                        <input type="text" id="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email"><i class="fas fa-envelope"></i> Email:</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono"><i class="fas fa-phone"></i> Teléfono:</label>
+                        <input type="text" id="telefono">
+                    </div>
+                    <div class="form-group">
+                        <label for="documento"><i class="fas fa-id-card"></i> Documento:</label>
+                        <input type="text" id="documento">
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Guardar</button>
+                        <button type="button" id="cancelar" class="btn btn-secondary"><i class="fas fa-times"></i> Cancelar</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="table-container">
+                <h2><i class="fas fa-list"></i> Lista de Usuarios</h2>
+                <div class="search-bar">
+                    <input type="text" id="buscar-usuario" placeholder="Buscar usuario...">
+                    <button class="btn btn-search"><i class="fas fa-search"></i></button>
+                </div>
+                <table id="usuarios-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Email</th>
+                            <th>Teléfono</th>
+                            <th>Documento</th>
+                            <th>Registro</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Juan Pérez</td>
+                            <td>juan@example.com</td>
+                            <td>+123456789</td>
+                            <td>12345678A</td>
+                            <td>2023-05-15</td>
+                            <td>
+                                <button class="btn btn-edit"><i class="fas fa-edit"></i></button>
+                                <button class="btn btn-delete"><i class="fas fa-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>María García</td>
+                            <td>maria@example.com</td>
+                            <td>+987654321</td>
+                            <td>87654321B</td>
+                            <td>2023-06-20</td>
+                            <td>
+                                <button class="btn btn-edit"><i class="fas fa-edit"></i></button>
+                                <button class="btn btn-delete"><i class="fas fa-trash"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="pagination">
+                    <button class="btn btn-prev"><i class="fas fa-chevron-left"></i></button>
+                    <span>Página 1 de 1</span>
+                    <button class="btn btn-next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Hotel Paradise &copy; 2023 - Sistema de Reservas</p>
+        </footer>
+    </div>
+
+    <script>
+        // Aquí iría el JavaScript para el CRUD en una implementación real
+        document.getElementById('cancelar').addEventListener('click', function() {
+            document.getElementById('usuario-form').reset();
+            document.getElementById('usuario-id').value = '';
+        });
+    </script>
+</body>
+</html>

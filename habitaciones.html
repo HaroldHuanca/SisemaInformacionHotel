@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Paradise - Gestión de Habitaciones</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="habitaciones.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-bed"></i> Gestión de Habitaciones</h1>
+            <nav>
+                <a href="usuarios.html"><i class="fas fa-users"></i> Usuarios</a>
+                <a href="#"><i class="fas fa-sign-out-alt"></i> Salir</a>
+            </nav>
+        </header>
+
+        <div class="content">
+            <div class="form-container">
+                <h2><i class="fas fa-plus-circle"></i> Agregar/Editar Habitación</h2>
+                <form id="habitacion-form">
+                    <input type="hidden" id="habitacion-id">
+                    <div class="form-group">
+                        <label for="numero"><i class="fas fa-hashtag"></i> Número:</label>
+                        <input type="number" id="numero" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="capacidad"><i class="fas fa-users"></i> Capacidad:</label>
+                        <input type="number" id="capacidad" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="ubicacion"><i class="fas fa-map-marker-alt"></i> Ubicación:</label>
+                        <select id="ubicacion" required>
+                            <option value="">Seleccionar...</option>
+                            <option value="Piso 1">Piso 1</option>
+                            <option value="Piso 2">Piso 2</option>
+                            <option value="Piso 3">Piso 3</option>
+                            <option value="Suite">Suite</option>
+                        </select>
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="disponible" checked>
+                        <label for="disponible"><i class="fas fa-check-circle"></i> Disponible</label>
+                    </div>
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary"><i class="fas fa-save"></i> Guardar</button>
+                        <button type="button" id="cancelar" class="btn btn-secondary"><i class="fas fa-times"></i> Cancelar</button>
+                    </div>
+                </form>
+            </div>
+
+            <div class="table-container">
+                <h2><i class="fas fa-list"></i> Lista de Habitaciones</h2>
+                <div class="search-bar">
+                    <input type="text" id="buscar-habitacion" placeholder="Buscar habitación...">
+                    <button class="btn btn-search"><i class="fas fa-search"></i></button>
+                </div>
+                <table id="habitaciones-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Número</th>
+                            <th>Capacidad</th>
+                            <th>Ubicación</th>
+                            <th>Disponible</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>101</td>
+                            <td>2</td>
+                            <td>Piso 1</td>
+                            <td><span class="status available"><i class="fas fa-check"></i> Disponible</span></td>
+                            <td>
+                                <button class="btn btn-edit"><i class="fas fa-edit"></i></button>
+                                <button class="btn btn-delete"><i class="fas fa-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>201</td>
+                            <td>4</td>
+                            <td>Piso 2</td>
+                            <td><span class="status occupied"><i class="fas fa-times"></i> Ocupada</span></td>
+                            <td>
+                                <button class="btn btn-edit"><i class="fas fa-edit"></i></button>
+                                <button class="btn btn-delete"><i class="fas fa-trash"></i></button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>301</td>
+                            <td>2</td>
+                            <td>Piso 3</td>
+                            <td><span class="status available"><i class="fas fa-check"></i> Disponible</span></td>
+                            <td>
+                                <button class="btn btn-edit"><i class="fas fa-edit"></i></button>
+                                <button class="btn btn-delete"><i class="fas fa-trash"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="pagination">
+                    <button class="btn btn-prev"><i class="fas fa-chevron-left"></i></button>
+                    <span>Página 1 de 1</span>
+                    <button class="btn btn-next"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>Hotel Paradise &copy; 2023 - Sistema de Reservas</p>
+        </footer>
+    </div>
+
+    <script>
+        // Aquí iría el JavaScript para el CRUD en una implementación real
+        document.getElementById('cancelar').addEventListener('click', function() {
+            document.getElementById('habitacion-form').reset();
+            document.getElementById('habitacion-id').value = '';
+        });
+    </script>
+</body>
+</html>
