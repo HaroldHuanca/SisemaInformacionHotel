@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas - Restaurante</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="assets/images/logo.png" alt="Logo Restaurante" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="reservas.html">Reservas</a></li>
+                    <li><a href="servicios.html">Servicios Adicionales</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="formulario">
+            <h2>Realiza tu Reserva</h2>
+            <form action="#" method="POST">
+                <label for="fecha_reserva">Fecha de Reserva</label>
+                <input type="date" id="fecha_reserva" name="fecha_reserva" required>
+
+                <label for="hora_inicio">Hora de Inicio</label>
+                <input type="time" id="hora_inicio" name="hora_inicio" required>
+
+                <label for="hora_fin">Hora de Fin</label>
+                <input type="time" id="hora_fin" name="hora_fin" required>
+
+                <label for="mesa">Selecciona una Mesa</label>
+                <select id="mesa" name="mesa" required>
+                    <option value="1">Mesa 1</option>
+                    <option value="2">Mesa 2</option>
+                    <option value="3">Mesa 3</option>
+                    <option value="4">Mesa 4</option>
+                </select>
+
+                <label for="estado">Estado de la Reserva</label>
+                <select id="estado" name="estado" required>
+                    <option value="pendiente">Pendiente</option>
+                    <option value="confirmada">Confirmada</option>
+                    <option value="cancelada">Cancelada</option>
+                    <option value="finalizada">Finalizada</option>
+                </select>
+
+                <label for="observaciones">Observaciones</label>
+                <textarea id="observaciones" name="observaciones" rows="4" placeholder="Ejemplo: Celebración de cumpleaños..."></textarea>
+
+                <button type="submit" class="btn">Confirmar Reserva</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Restaurante - Todos los derechos reservados</p>
+    </footer>
+</body>
+</html>
